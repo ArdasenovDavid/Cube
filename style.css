@@ -1,0 +1,190 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #050505;
+}
+.container {
+	position: relative;
+	margin: 200px auto;
+	width: 300px;
+	height: 300px;
+	perspective: 1000px;
+}
+.cube {
+
+	width: inherit;
+	height: inherit;
+	transform-style: preserve-3d;
+	
+	/*animation: anime 4s linear infinite;*/
+}
+
+@keyframes anime {
+	0% {
+		transform: rotateY(0deg) ;
+	}
+	100% {
+		transform: rotateY(360deg) ;
+	}
+}
+
+.side {
+	transition: 2s;
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	font-family: sans-serif;
+	text-align: center;
+	line-height: 300px;
+	color: white;
+	
+}
+
+.one {
+	background: linear-gradient(to top , powderblue, pink);
+	transform: translateZ(150px);
+}
+
+.six {
+	background: linear-gradient(to top, powderblue, pink);
+	transform: translateZ(-150px) rotateY(180deg);
+}
+
+.two {
+	background: linear-gradient(to top, powderblue, pink);
+	transform: rotateY(90deg) translateZ(150px);
+}
+.five {
+	background: linear-gradient(to top , powderblue, pink);
+	transform: rotateY(-90deg) translateZ(150px);
+}
+.three {
+	background: pink;
+	transform: rotateX(90deg) translateZ(150px);
+}
+.four {
+	background: powderblue;
+	transform: rotateX(-90deg) translateZ(150px);
+}
+
+.btn-container {
+	width: 90px;
+	height: 50px;
+	position: absolute;
+	top: 900px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 3px solid white;
+	border-radius: 10px;
+}
+
+.btn {
+	
+	background: white;
+	width: 80px;
+	height: 40px;
+	border-radius: 8px;
+	font-size: 15px;
+}
+
+
+
+
+
+.cube:hover .one{
+
+	transform: translateZ(250px);
+} 
+.cube:hover .six{
+	transform: translateZ(-250px) rotateY(180deg);
+}
+
+.cube:hover .two{
+	transform: translateX(250px) rotateY(90deg);
+}
+
+.cube:hover .five{
+	transform: translateX(-250px) rotateY(-90deg);
+}
+
+.cube:hover .three{
+	transform: translateY(-250px) rotateX(90deg);
+}
+
+.cube:hover .four{
+	transform: translateY(250px) rotateX(-90deg);
+}
+
+
+@media (max-width: 500px) {
+	.container {
+	width: 200px;
+	height: 200px;
+	}
+
+	.side {
+		line-height: 200px;
+	}
+
+	.one {
+		transform: translateZ(100px);
+	}
+
+	.six {
+		
+		transform: translateZ(-100px) rotateY(180deg);
+	}
+
+	.two {
+		
+		transform: rotateY(90deg) translateZ(100px);
+	}
+	.five {
+		
+		transform: rotateY(-90deg) translateZ(100px);
+	}
+	.three {
+		
+		transform: rotateX(90deg) translateZ(100px);
+	}
+	.four {
+		
+		transform: rotateX(-90deg) translateZ(100px);
+	}
+	.btn-container {
+		top: 100px;
+	}
+
+
+	.cube:hover .one{
+
+	transform: translateZ(130px);
+	} 
+	.cube:hover .six{
+		transform: translateZ(-130px) rotateY(180deg);
+	}
+
+	.cube:hover .two{
+		transform: translateX(130px) rotateY(90deg);
+	}
+
+	.cube:hover .five{
+		transform: translateX(-130px) rotateY(-90deg);
+	}
+
+	.cube:hover .three{
+		transform: translateY(-130px) rotateX(90deg);
+	}
+
+	.cube:hover .four{
+		transform: translateY(130px) rotateX(-90deg);
+	}
+}
